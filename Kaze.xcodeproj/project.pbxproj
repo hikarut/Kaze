@@ -135,6 +135,7 @@
 				173529561D27B366000587DD /* Sources */,
 				173529571D27B366000587DD /* Frameworks */,
 				173529581D27B366000587DD /* Resources */,
+				1735298B1D27B4EA000587DD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +254,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1735298B1D27B4EA000587DD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		173529561D27B366000587DD /* Sources */ = {
@@ -487,6 +504,7 @@
 				173529841D27B366000587DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		173529851D27B366000587DD /* Build configuration list for PBXNativeTarget "KazeTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +513,7 @@
 				173529871D27B366000587DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		173529881D27B366000587DD /* Build configuration list for PBXNativeTarget "KazeUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +522,7 @@
 				1735298A1D27B366000587DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

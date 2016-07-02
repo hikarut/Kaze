@@ -1,0 +1,15 @@
+# 適用したくないチェック項目を記述
+disabled_rules:
+  - line_length
+  - trailing_whitespace
+  - force_cast
+  - force_try
+  - function_body_length
+  - type_body_length
+  - todo
+  - file_length
+
+# Lint対象から外すファイル
+excluded:
+  - Carthage
+
