@@ -15,6 +15,14 @@ class ViewController: UIViewController {
     
     let cmManager = CMMotionManager()
     
+    var xBefore: Double = 0
+    var yBefore: Double = 0
+    var zBefore: Double = 0
+    
+    var xDiff: Double = 0
+    var yDiff: Double = 0
+    var zDiff: Double = 0
+    
     @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
@@ -36,15 +44,21 @@ class ViewController: UIViewController {
     func showMagnetoData(magnetoData: CMMagnetometerData?, error: NSError?) {
         if let data = magnetoData {
             
-            var x = data.magneticField.x
-            var y = data.magneticField.y
-            var z = data.magneticField.z
+            let x = data.magneticField.x
+            let y = data.magneticField.y
+            let z = data.magneticField.z
             
-            x = round(x*100)/100
-            y = round(y*100)/100
-            z = round(z*100)/100
+            xDiff = round((x - xBefore)*100)/100
+            yDiff = round((y - yBefore)*100)/100
+            zDiff = round((z - zBefore)*100)/100
             
-            label.text = "x:" + String(x) + "/ y:" + String(y) + "/ z:" + String(z)
+            xBefore = x
+            yBefore = y
+            zBefore = z
+            
+//            label.text = "x:" + String(x) + "/ y:" + String(y) + "/ z:" + String(z)
+            // 磁力の変化を表示
+            label.text = "x:" + String(xDiff) + "/ y:" + String(yDiff) + "/ z:" + String(zDiff)
             
         }
     }
