@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1735295A1D27B366000587DD /* Kaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1735295A1D27B366000587DD /* kaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1735295D1D27B366000587DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1735295F1D27B366000587DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		173529621D27B366000587DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		1735295B1D27B366000587DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1735295A1D27B366000587DD /* Kaze.app */,
+				1735295A1D27B366000587DD /* kaze.app */,
 				1735296E1D27B366000587DD /* KazeTests.xctest */,
 				173529791D27B366000587DD /* KazeUITests.xctest */,
 			);
@@ -158,7 +158,7 @@
 			);
 			name = Kaze;
 			productName = Kaze;
-			productReference = 1735295A1D27B366000587DD /* Kaze.app */;
+			productReference = 1735295A1D27B366000587DD /* kaze.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1735296D1D27B366000587DD /* KazeTests */ = {
@@ -459,7 +459,7 @@
 				INFOPLIST_FILE = Kaze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HikaruTakahashi.Kaze;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = kaze;
 			};
 			name = Debug;
 		};
@@ -474,7 +474,7 @@
 				INFOPLIST_FILE = Kaze/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HikaruTakahashi.Kaze;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = kaze;
 			};
 			name = Release;
 		};
