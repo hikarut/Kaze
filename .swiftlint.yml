@@ -8,6 +8,7 @@ disabled_rules:
   - type_body_length
   - todo
   - file_length
+  - variable_name_min_length
 
 # Lint対象から外すファイル
 excluded:

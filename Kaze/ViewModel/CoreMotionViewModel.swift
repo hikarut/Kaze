@@ -6,11 +6,9 @@
 //  Copyright © 2016年 HikaruTakahashi. All rights reserved.
 //
 
-import CoreMotion
+import Foundation
 
 class CoreMotionViewModel {
-    
-    let cmManager = CMMotionManager()
     
     var xBefore: Double = 0
     var yBefore: Double = 0
@@ -21,20 +19,10 @@ class CoreMotionViewModel {
     var zDiff: Double = 0
     
     init() {
-        // 更新間隔のセット
-        cmManager.magnetometerUpdateInterval = Const.interval
     }
     
-    func showMagnetoData(magnetoData: CMMagnetometerData?, error: NSError?) -> [Double] {
+    func getMotionDiff(x: Double, y: Double, z: Double) -> [Double] {
         var result: [Double] = []
-        
-        guard let data = magnetoData else {
-            return result
-        }
-        
-        let x = data.magneticField.x
-        let y = data.magneticField.y
-        let z = data.magneticField.z
         
         xDiff = round((x - xBefore)*100)/100
         yDiff = round((y - yBefore)*100)/100
@@ -49,6 +37,7 @@ class CoreMotionViewModel {
         result.append(zDiff)
         
         return result
+
     }
     
 }
