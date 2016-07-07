@@ -12,7 +12,8 @@ import CoreMotion
 //import RxCocoa
 
 class ViewController: UIViewController {
-    
+//class ViewController: UISplitViewController {
+
     let cmManager = CMMotionManager()
     let coreMotionViewModel = CoreMotionViewModel()
     
@@ -50,11 +51,13 @@ class ViewController: UIViewController {
             let data = coreMotionViewModel.getMotionDiff(x, y: y, z: z)
             
             // 磁力の変化を表示
-            let xDiff = String(data[0])
-            let yDiff = String(data[1])
-            let zDiff = String(data[2])
-            label.text = "x:" + xDiff + "/ y:" + yDiff + "/ z:" + zDiff
+            label.text = String(data)
         }
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        // 全画面を許可
+        return .All
     }
     
 }

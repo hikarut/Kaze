@@ -18,26 +18,31 @@ class CoreMotionViewModel {
     var yDiff: Double = 0
     var zDiff: Double = 0
     
-    init() {
-    }
-    
-    func getMotionDiff(x: Double, y: Double, z: Double) -> [Double] {
-        var result: [Double] = []
+    func getMotionDiff(x: Double, y: Double, z: Double) -> Double {
+        var diffSum: Double = 0.0
         
-        xDiff = round((x - xBefore)*100)/100
-        yDiff = round((y - yBefore)*100)/100
-        zDiff = round((z - zBefore)*100)/100
+        if xBefore == 0 && yBefore == 0 && zBefore == 0 {
+            xDiff = 0
+            yDiff = 0
+            zDiff = 0
+        } else {
+            // 差分を10分の1にする
+            xDiff = round((x - xBefore)*10)/100
+            yDiff = round((y - yBefore)*10)/100
+            zDiff = round((z - zBefore)*10)/100
+        }
+        
+        // 差分の絶対値を合計する
+        diffSum = fabs(xDiff) + fabs(yDiff) + fabs(zDiff)
+        
+        // 1以下は0にする
+        diffSum = diffSum < 1 ? 0.0 : diffSum
         
         xBefore = x
         yBefore = y
         zBefore = z
         
-        result.append(xDiff)
-        result.append(yDiff)
-        result.append(zDiff)
-        
-        return result
-
+        return diffSum
     }
     
 }
