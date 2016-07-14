@@ -37,12 +37,28 @@ class CoreMotionViewModel {
         
         // 1以下は0にする
         diffSum = diffSum < 1 ? 0.0 : diffSum
+        // 差に強弱をつけるために累乗する
+        diffSum = round(diffSum * diffSum * 100)/100
         
         xBefore = x
         yBefore = y
         zBefore = z
         
         return diffSum
+    }
+    
+    func getMotionDiffForDebug(x: Double, y: Double, z: Double) -> [Double] {
+        var result: [Double] = []
+        
+        let x = round(x*100)/100
+        let y = round(y*100)/100
+        let z = round(z*100)/100
+                
+        result.append(x)
+        result.append(y)
+        result.append(z)
+        
+        return result
     }
     
 }

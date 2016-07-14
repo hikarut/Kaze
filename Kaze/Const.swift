@@ -7,5 +7,5 @@
 //
 
 struct Const {
-    static let interval = 0.5
+    static let interval = 0.3
 }

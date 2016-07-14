@@ -12,12 +12,14 @@ import CoreMotion
 //import RxCocoa
 
 class ViewController: UIViewController {
-//class ViewController: UISplitViewController {
 
     let cmManager = CMMotionManager()
     let coreMotionViewModel = CoreMotionViewModel()
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var debugLabelX: UILabel!
+    @IBOutlet weak var debugLabelY: UILabel!
+    @IBOutlet weak var debugLabelZ: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +54,12 @@ class ViewController: UIViewController {
             
             // 磁力の変化を表示
             label.text = String(data)
+            
+            // デバッグ用
+            let debugData = coreMotionViewModel.getMotionDiffForDebug(x, y: y, z: z)
+            debugLabelX.text = "x:" + String(debugData[0])
+            debugLabelY.text = "y:" + String(debugData[1])
+            debugLabelZ.text = "z:" + String(debugData[2])
         }
     }
     
