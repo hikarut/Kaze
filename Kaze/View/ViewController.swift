@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     let cmManager = CMMotionManager()
     let coreMotionViewModel = CoreMotionViewModel()
+    let socketViewModel = SocketViewModel()
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var debugLabelX: UILabel!
@@ -25,6 +26,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         startCoreMotion()
+        
+        socketViewModel.socketConnect()
+        socketViewModel.socketEmit()
     }
 
     override func didReceiveMemoryWarning() {

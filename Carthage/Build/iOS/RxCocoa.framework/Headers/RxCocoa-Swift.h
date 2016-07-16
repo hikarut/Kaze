@@ -387,6 +387,18 @@ SWIFT_CLASS("_TtC7RxCocoa26RxImagePickerDelegateProxy")
 @end
 
 
+SWIFT_CLASS("_TtC7RxCocoa25RxPickerViewDelegateProxy")
+@interface RxPickerViewDelegateProxy : DelegateProxy <UIPickerViewDelegate>
+
+/// For more information take a look at DelegateProxyType.
++ (void)setCurrentDelegate:(id _Nullable)delegate toObject:(id _Nonnull)object;
+
+/// For more information take a look at DelegateProxyType.
++ (id _Nullable)currentDelegateFor:(id _Nonnull)object;
+- (nonnull instancetype)initWithParentObject:(id _Nonnull)parentObject OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 
 /// For more information take a look at DelegateProxyType.
@@ -415,6 +427,23 @@ SWIFT_CLASS("_TtC7RxCocoa31RxSearchControllerDelegateProxy")
 
 /// For more information take a look at DelegateProxyType.
 + (id _Nullable)currentDelegateFor:(id _Nonnull)object;
+- (nonnull instancetype)initWithParentObject:(id _Nonnull)parentObject OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+/// For more information take a look at DelegateProxyType.
+SWIFT_CLASS("_TtC7RxCocoa21RxTabBarDelegateProxy")
+@interface RxTabBarDelegateProxy : DelegateProxy <UITabBarDelegate>
+
+/// For more information take a look at DelegateProxyType.
++ (id _Nullable)currentDelegateFor:(id _Nonnull)object;
+
+/// For more information take a look at DelegateProxyType.
++ (void)setCurrentDelegate:(id _Nullable)delegate toObject:(id _Nonnull)object;
+
+/// For more information take a look at DelegateProxyType.
++ (id _Nonnull)createProxyForObject:(id _Nonnull)object;
 - (nonnull instancetype)initWithParentObject:(id _Nonnull)parentObject OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -520,11 +549,19 @@ SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
 @end
 
 
+@interface UIAlertAction (SWIFT_EXTENSION(RxCocoa))
+@end
+
+
 @interface UIApplication (SWIFT_EXTENSION(RxCocoa))
 @end
 
 
 @interface UIBarButtonItem (SWIFT_EXTENSION(RxCocoa))
+@end
+
+
+@interface UIButton (SWIFT_EXTENSION(RxCocoa))
 @end
 
 
@@ -592,6 +629,17 @@ SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
 @end
 
 
+@interface UIPageControl (SWIFT_EXTENSION(RxCocoa))
+@end
+
+
+@interface UIPickerView (SWIFT_EXTENSION(RxCocoa))
+
+/// Reactive wrapper for delegate. For more information take a look at DelegateProxyType protocol documentation.
+@property (nonatomic, readonly, strong) DelegateProxy * _Nonnull rx_delegate;
+@end
+
+
 @interface UIProgressView (SWIFT_EXTENSION(RxCocoa))
 @end
 
@@ -655,6 +703,26 @@ SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
 @end
 
 
+@interface UITabBar (SWIFT_EXTENSION(RxCocoa))
+
+/// Factory method that enables subclasses to implement their own rx_delegate.
+///
+/// \returns  Instance of delegate proxy that wraps <code>delegate
+/// </code>.
+- (RxTabBarDelegateProxy * _Nonnull)rx_createDelegateProxy;
+
+/// Reactive wrapper for delegate.
+///
+/// For more information take a look at <code>DelegateProxyType
+/// </code> protocol documentation.
+@property (nonatomic, readonly, strong) DelegateProxy * _Nonnull rx_delegate;
+@end
+
+
+@interface UITabBar (SWIFT_EXTENSION(RxCocoa))
+@end
+
+
 @interface UITabBarItem (SWIFT_EXTENSION(RxCocoa))
 @end
 
@@ -700,6 +768,10 @@ SWIFT_CLASS("_TtC7RxCocoa25TableViewDataSourceNotSet")
 
 
 @interface UIView (SWIFT_EXTENSION(RxCocoa))
+@end
+
+
+@interface UIViewController (SWIFT_EXTENSION(RxCocoa))
 @end
 
 

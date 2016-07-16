@@ -8,4 +8,6 @@
 
 struct Const {
     static let interval = 0.3
+    static let socketServer = "http://160.16.241.168:8080/"
+    static let socketServerDebug = "http://localhost:8080/"
 }

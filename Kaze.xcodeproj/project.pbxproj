@@ -20,6 +20,8 @@
 		173529901D27CBBA000587DD /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735298C1D27CBBA000587DD /* RxSwift.framework */; };
 		173529911D27CBBA000587DD /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735298D1D27CBBA000587DD /* RxCocoa.framework */; };
 		173529931D27CBBA000587DD /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735298F1D27CBBA000587DD /* RxBlocking.framework */; };
+		1790BFCC1D39C66200DD64BC /* SocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790BFCB1D39C66200DD64BC /* SocketViewModel.swift */; };
+		1790BFCE1D39CE4500DD64BC /* SocketIOClientSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		1735298D1D27CBBA000587DD /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1735298E1D27CBBA000587DD /* RxTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTests.framework; path = Carthage/Build/iOS/RxTests.framework; sourceTree = "<group>"; };
 		1735298F1D27CBBA000587DD /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		1790BFCB1D39C66200DD64BC /* SocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketViewModel.swift; path = ../View/SocketViewModel.swift; sourceTree = "<group>"; };
+		1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIOClientSwift.framework; path = Carthage/Build/iOS/SocketIOClientSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1790BFCE1D39CE4500DD64BC /* SocketIOClientSwift.framework in Frameworks */,
 				173529901D27CBBA000587DD /* RxSwift.framework in Frameworks */,
 				173529911D27CBBA000587DD /* RxCocoa.framework in Frameworks */,
 				173529931D27CBBA000587DD /* RxBlocking.framework in Frameworks */,
@@ -101,6 +106,7 @@
 		171B129F1D2BE8B700D5BF26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1790BFCB1D39C66200DD64BC /* SocketViewModel.swift */,
 				171B12A11D2BE9BB00D5BF26 /* CoreMotionViewModel.swift */,
 			);
 			path = ViewModel;
@@ -117,6 +123,7 @@
 		173529511D27B366000587DD = {
 			isa = PBXGroup;
 			children = (
+				1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */,
 				1735295C1D27B366000587DD /* Kaze */,
 				173529711D27B366000587DD /* KazeTests */,
 				1735297C1D27B366000587DD /* KazeUITests */,
@@ -326,6 +333,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SocketIOClientSwift.framework",
 			);
 			outputPaths = (
 			);
@@ -341,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				173529601D27B366000587DD /* ViewController.swift in Sources */,
+				1790BFCC1D39C66200DD64BC /* SocketViewModel.swift in Sources */,
 				171B12A21D2BE9BB00D5BF26 /* CoreMotionViewModel.swift in Sources */,
 				1735295E1D27B366000587DD /* AppDelegate.swift in Sources */,
 				171B12A41D2BE9D900D5BF26 /* Model.swift in Sources */,

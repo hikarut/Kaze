@@ -144,6 +144,22 @@ extension ControlTests {
     }
 }
 
+// UIAlertAction
+extension ControlTests {
+    func testAlertAction_Enable() {
+        let subject = UIAlertAction()
+        Observable.just(false).subscribe(subject.rx_enabled).dispose()
+        
+        XCTAssertTrue(subject.enabled == false)
+    }
+
+    func testAlertAction_Disable() {
+        let subject = UIAlertAction()
+        Observable.just(true).subscribe(subject.rx_enabled).dispose()
+        
+        XCTAssertTrue(subject.enabled == true)
+    }
+}
 
 #if os(iOS)
 
@@ -174,10 +190,14 @@ extension ControlTests {
 
 // UISwitch
 extension ControlTests {
+    #if swift(>=2.2)
+    #else
+    // TODO: UISwitch doesn't dealloc on Swift 2.3 compiler
     func testSwitch_DelegateEventCompletesOnDealloc() {
         let createView: () -> UISwitch = { UISwitch(frame: CGRectMake(0, 0, 1, 1)) }
         ensurePropertyDeallocated(createView, true) { (view: UISwitch) in view.rx_value }
     }
+    #endif
 }
 
 // UIButton
