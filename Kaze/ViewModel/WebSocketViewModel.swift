@@ -9,7 +9,7 @@
 
 import Starscream
 
-class WebSocketViewModel: WebSocketDelegate {
+class WebSocketViewModel {
     
     var socket = WebSocket(url: NSURL(string: Const.websocketServerDebug)!)
 //    var socket = WebSocket(url: NSURL(string: Const.websocketServer)!)
@@ -23,6 +23,12 @@ class WebSocketViewModel: WebSocketDelegate {
         socket.writeString(string)
     }
     
+    func disconnect() {
+        socket.disconnect()
+    }
+}
+
+extension WebSocketViewModel: WebSocketDelegate {
     func websocketDidConnect(ws: WebSocket) {
         print("websocket is connected")
     }
@@ -38,5 +44,4 @@ class WebSocketViewModel: WebSocketDelegate {
     func websocketDidReceiveData(socket: WebSocket, data: NSData) {
         print("got some data: \(data.length)")
     }
-
 }

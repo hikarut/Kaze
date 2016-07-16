@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreMotion
+import LTMorphingLabel
+import Chameleon
 //import RxSwift
 //import RxCocoa
 
@@ -16,10 +18,12 @@ class ViewController: UIViewController {
     let cmManager = CMMotionManager()
     
     let coreMotionViewModel = CoreMotionViewModel()
-    let socketIoViewModel = SocketIoViewModel()
     let websocketViewModel = WebSocketViewModel()
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label: LTMorphingLabel!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    
     @IBOutlet weak var debugLabelX: UILabel!
     @IBOutlet weak var debugLabelY: UILabel!
     @IBOutlet weak var debugLabelZ: UILabel!
@@ -28,10 +32,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startCoreMotion()
+        label.morphingEffect = .Anvil
+        startButton.backgroundColor = FlatRed()
+        stopButton.backgroundColor = FlatRed()
+        startButton.tintColor = FlatWhite()
+        stopButton.tintColor = FlatWhite()
+        stopButton.enabled = false
         
-//        socketIoViewModel.socketConnect()
-        websocketViewModel.connect()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,12 +79,8 @@ class ViewController: UIViewController {
             debugLabelY.text = "y:" + String(debugData[1])
             debugLabelZ.text = "z:" + String(debugData[2])
             
-            // 差分をsocketで送信
-//            socketIoViewModel.socketEmit(String(data))
+            // 差分をwebsocketで送信
             websocketViewModel.send(String(data))
-            
-            // デバッグ
-            print("a")
         }
     }
     
@@ -88,12 +91,22 @@ class ViewController: UIViewController {
     
     // デバッグ用
     @IBAction func tap(sender: UIButton) {
-        print("tap")
-//        socketIoViewModel.socketEmit("test")
-        
         websocketViewModel.send("test")
         
         stopCoreMotion()
     }
     
+    @IBAction func tapStart(sender: UIButton) {
+        startCoreMotion()
+        websocketViewModel.connect()
+        startButton.enabled = false
+        stopButton.enabled = true
+    }
+    
+    @IBAction func tapStop(sender: UIButton) {
+        stopCoreMotion()
+        websocketViewModel.disconnect()
+        startButton.enabled = true
+        stopButton.enabled = false
+    }
 }

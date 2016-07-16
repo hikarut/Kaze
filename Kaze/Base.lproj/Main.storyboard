@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRr-ff-GLB">
-                                <rect key="frame" x="54" y="231" width="267" height="99"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="kaze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRr-ff-GLB" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="54" y="117" width="267" height="99"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,6 +48,30 @@
                                     <action selector="tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dT-Pf-Ybg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-Fz-l8d">
+                                <rect key="frame" x="70" y="284" width="100" height="60"/>
+                                <state key="normal" title="START"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8H7-Vk-uUl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-X0-EVL">
+                                <rect key="frame" x="215" y="284" width="100" height="60"/>
+                                <state key="normal" title="STOP"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rnk-Al-ydh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -58,6 +82,8 @@
                         <outlet property="debugLabelY" destination="EZk-rG-OqD" id="Gb3-Hl-n0K"/>
                         <outlet property="debugLabelZ" destination="nXb-wq-NB7" id="Hs7-Mb-MWr"/>
                         <outlet property="label" destination="xRr-ff-GLB" id="jCq-cR-oFx"/>
+                        <outlet property="startButton" destination="XIA-Fz-l8d" id="Hrd-0t-DBm"/>
+                        <outlet property="stopButton" destination="dHa-X0-EVL" id="JBs-Nz-laP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
