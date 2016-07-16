@@ -4,6 +4,7 @@
 //
 //  Created by HikaruTakahashi on 2016/07/16.
 //  Copyright © 2016年 HikaruTakahashi. All rights reserved.
+//  dosc https://github.com/socketio/socket.io-client-swift
 //
 
 import SocketIOClientSwift

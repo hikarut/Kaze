@@ -22,6 +22,7 @@
 		173529931D27CBBA000587DD /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1735298F1D27CBBA000587DD /* RxBlocking.framework */; };
 		1790BFCC1D39C66200DD64BC /* SocketIoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */; };
 		1790BFCE1D39CE4500DD64BC /* SocketIOClientSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */; };
+		1790BFD01D39FBEE00DD64BC /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		1735298F1D27CBBA000587DD /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIoViewModel.swift; path = ../View/SocketIoViewModel.swift; sourceTree = "<group>"; };
 		1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIOClientSwift.framework; path = Carthage/Build/iOS/SocketIOClientSwift.framework; sourceTree = "<group>"; };
+		1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */,
 				171B12A11D2BE9BB00D5BF26 /* CoreMotionViewModel.swift */,
+				1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				1790BFCC1D39C66200DD64BC /* SocketIoViewModel.swift in Sources */,
 				171B12A21D2BE9BB00D5BF26 /* CoreMotionViewModel.swift in Sources */,
 				1735295E1D27B366000587DD /* AppDelegate.swift in Sources */,
+				1790BFD01D39FBEE00DD64BC /* WebSocketViewModel.swift in Sources */,
 				171B12A41D2BE9D900D5BF26 /* Model.swift in Sources */,
 				171B12A61D2BEC4800D5BF26 /* Const.swift in Sources */,
 			);
