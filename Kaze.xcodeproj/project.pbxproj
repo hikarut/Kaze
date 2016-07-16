@@ -23,6 +23,9 @@
 		1790BFCC1D39C66200DD64BC /* SocketIoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */; };
 		1790BFCE1D39CE4500DD64BC /* SocketIOClientSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */; };
 		1790BFD01D39FBEE00DD64BC /* WebSocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */; };
+		1790BFD41D3A018D00DD64BC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD11D3A018D00DD64BC /* Starscream.framework */; };
+		1790BFD51D3A018D00DD64BC /* LTMorphingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD21D3A018D00DD64BC /* LTMorphingLabel.framework */; };
+		1790BFD61D3A018D00DD64BC /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD31D3A018D00DD64BC /* Chameleon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocketIoViewModel.swift; path = ../View/SocketIoViewModel.swift; sourceTree = "<group>"; };
 		1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SocketIOClientSwift.framework; path = Carthage/Build/iOS/SocketIOClientSwift.framework; sourceTree = "<group>"; };
 		1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketViewModel.swift; sourceTree = "<group>"; };
+		1790BFD11D3A018D00DD64BC /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
+		1790BFD21D3A018D00DD64BC /* LTMorphingLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMorphingLabel.framework; path = Carthage/Build/iOS/LTMorphingLabel.framework; sourceTree = "<group>"; };
+		1790BFD31D3A018D00DD64BC /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1790BFD41D3A018D00DD64BC /* Starscream.framework in Frameworks */,
+				1790BFD51D3A018D00DD64BC /* LTMorphingLabel.framework in Frameworks */,
+				1790BFD61D3A018D00DD64BC /* Chameleon.framework in Frameworks */,
 				1790BFCE1D39CE4500DD64BC /* SocketIOClientSwift.framework in Frameworks */,
 				173529901D27CBBA000587DD /* RxSwift.framework in Frameworks */,
 				173529911D27CBBA000587DD /* RxCocoa.framework in Frameworks */,
@@ -126,6 +135,9 @@
 		173529511D27B366000587DD = {
 			isa = PBXGroup;
 			children = (
+				1790BFD11D3A018D00DD64BC /* Starscream.framework */,
+				1790BFD21D3A018D00DD64BC /* LTMorphingLabel.framework */,
+				1790BFD31D3A018D00DD64BC /* Chameleon.framework */,
 				1790BFCD1D39CE4500DD64BC /* SocketIOClientSwift.framework */,
 				1735295C1D27B366000587DD /* Kaze */,
 				173529711D27B366000587DD /* KazeTests */,
@@ -337,6 +349,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SocketIOClientSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Chameleon.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/LTMorphingLabel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Starscream.framework",
 			);
 			outputPaths = (
 			);

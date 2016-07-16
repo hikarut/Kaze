@@ -16,8 +16,7 @@ class SocketIoViewModel {
     
     // socketをはる
     func socketConnect() {
-        socket = SocketIOClient(socketURL: NSURL(string: Const.socketServerDebug)!, options: [.Log(true), .ForcePolling(true)])
-//        socket = SocketIOClient(socketURL: NSURL(string: Const.socketServer)!, options: [.Log(true), .ForcePolling(true)])
+        socket = SocketIOClient(socketURL: NSURL(string: Const.socketIoServerDebug)!, options: [.Log(true), .ForcePolling(true)])
         
         socket.connect()
     }

@@ -16,7 +16,8 @@ class ViewController: UIViewController {
     let cmManager = CMMotionManager()
     
     let coreMotionViewModel = CoreMotionViewModel()
-    let socketViewModel = SocketIoViewModel()
+    let socketIoViewModel = SocketIoViewModel()
+    let websocketViewModel = WebSocketViewModel()
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var debugLabelX: UILabel!
@@ -29,7 +30,8 @@ class ViewController: UIViewController {
         
         startCoreMotion()
         
-        socketViewModel.socketConnect()
+//        socketIoViewModel.socketConnect()
+        websocketViewModel.connect()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,7 +73,8 @@ class ViewController: UIViewController {
             debugLabelZ.text = "z:" + String(debugData[2])
             
             // 差分をsocketで送信
-            socketViewModel.socketEmit(String(data))
+//            socketIoViewModel.socketEmit(String(data))
+            websocketViewModel.send(String(data))
             
             // デバッグ
             print("a")
@@ -86,7 +89,9 @@ class ViewController: UIViewController {
     // デバッグ用
     @IBAction func tap(sender: UIButton) {
         print("tap")
-        socketViewModel.socketEmit("test")
+//        socketIoViewModel.socketEmit("test")
+        
+        websocketViewModel.send("test")
         
         stopCoreMotion()
     }

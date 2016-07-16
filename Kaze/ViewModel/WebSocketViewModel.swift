@@ -7,6 +7,36 @@
 //  docs https://github.com/daltoniam/Starscream
 //
 
-class WebSocketViewModel {
+import Starscream
+
+class WebSocketViewModel: WebSocketDelegate {
+    
+    var socket = WebSocket(url: NSURL(string: Const.websocketServerDebug)!)
+//    var socket = WebSocket(url: NSURL(string: Const.websocketServer)!)
+    
+    func connect() {
+        socket.delegate = self
+        socket.connect()
+    }
+    
+    func send(string: String) {
+        socket.writeString(string)
+    }
+    
+    func websocketDidConnect(ws: WebSocket) {
+        print("websocket is connected")
+    }
+    
+    func websocketDidDisconnect(socket: WebSocket, error: NSError?) {
+        print("websocket is disconnected: \(error?.localizedDescription)")
+    }
+    
+    func websocketDidReceiveMessage(socket: WebSocket, text: String) {
+        print("got some text: \(text)")
+    }
+    
+    func websocketDidReceiveData(socket: WebSocket, data: NSData) {
+        print("got some data: \(data.length)")
+    }
 
 }
