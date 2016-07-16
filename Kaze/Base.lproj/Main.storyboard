@@ -41,6 +41,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgO-96-dZb">
+                                <rect key="frame" x="125" y="552" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dT-Pf-Ybg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,6 +57,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="debugButton" destination="UgO-96-dZb" id="OUH-L2-ouW"/>
                         <outlet property="debugLabelX" destination="2Jq-7i-OPa" id="sle-g0-3L9"/>
                         <outlet property="debugLabelY" destination="EZk-rG-OqD" id="Gb3-Hl-n0K"/>
                         <outlet property="debugLabelZ" destination="nXb-wq-NB7" id="Hs7-Mb-MWr"/>

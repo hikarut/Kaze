@@ -14,13 +14,15 @@ import CoreMotion
 class ViewController: UIViewController {
 
     let cmManager = CMMotionManager()
+    
     let coreMotionViewModel = CoreMotionViewModel()
-    let socketViewModel = SocketViewModel()
+    let socketViewModel = SocketIoViewModel()
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var debugLabelX: UILabel!
     @IBOutlet weak var debugLabelY: UILabel!
     @IBOutlet weak var debugLabelZ: UILabel!
+    @IBOutlet weak var debugButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,6 @@ class ViewController: UIViewController {
         startCoreMotion()
         
         socketViewModel.socketConnect()
-        socketViewModel.socketEmit()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +45,10 @@ class ViewController: UIViewController {
         }
         // キューを登録し、スタート
         cmManager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
+    }
+    
+    func stopCoreMotion() {
+        cmManager.stopMagnetometerUpdates()
     }
     
     func showMagnetoData(magnetoData: CMMagnetometerData?, error: NSError?) {
@@ -64,12 +69,26 @@ class ViewController: UIViewController {
             debugLabelX.text = "x:" + String(debugData[0])
             debugLabelY.text = "y:" + String(debugData[1])
             debugLabelZ.text = "z:" + String(debugData[2])
+            
+            // 差分をsocketで送信
+            socketViewModel.socketEmit(String(data))
+            
+            // デバッグ
+            print("a")
         }
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         // 全画面を許可
         return .All
+    }
+    
+    // デバッグ用
+    @IBAction func tap(sender: UIButton) {
+        print("tap")
+        socketViewModel.socketEmit("test")
+        
+        stopCoreMotion()
     }
     
 }
