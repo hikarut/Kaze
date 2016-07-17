@@ -10,11 +10,12 @@ import UIKit
 import CoreMotion
 import LTMorphingLabel
 import Chameleon
-//import RxSwift
-//import RxCocoa
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
     let cmManager = CMMotionManager()
     
     let magnetoMeterViewModel = MagnetoMeterViewModel()
@@ -32,8 +33,34 @@ class ViewController: UIViewController {
         
         // ボタンの設定
         setButtonInit()
+        
+        // スタートボタン
+        startButton.rx_tap
+            .subscribeNext { [unowned self] _ in
+                self.startMagnetoMeter()
+                self.websocketViewModel.connect()
+                
+                self.startButton.enabled = false
+                self.startButton.backgroundColor = FlatGray()
+                self.stopButton.enabled = true
+                self.stopButton.backgroundColor = FlatRed()
+            }
+            .addDisposableTo(disposeBag)
+        
+        // ストップボタン
+        stopButton.rx_tap
+            .subscribeNext { [unowned self] _ in
+                self.stopMagnetoMeter()
+                self.websocketViewModel.disconnect()
+                
+                self.startButton.enabled = true
+                self.startButton.backgroundColor = FlatRed()
+                self.stopButton.enabled = false
+                self.stopButton.backgroundColor = FlatGray()
+            }
+            .addDisposableTo(disposeBag)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -83,25 +110,5 @@ class ViewController: UIViewController {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         // 全画面を許可
         return .All
-    }
-    
-    @IBAction func tapStart(sender: UIButton) {
-        startMagnetoMeter()
-        websocketViewModel.connect()
-        
-        startButton.enabled = false
-        startButton.backgroundColor = FlatGray()
-        stopButton.enabled = true
-        stopButton.backgroundColor = FlatRed()
-    }
-    
-    @IBAction func tapStop(sender: UIButton) {
-        stopMagnetoMeter()
-        websocketViewModel.disconnect()
-        
-        startButton.enabled = true
-        startButton.backgroundColor = FlatRed()
-        stopButton.enabled = false
-        stopButton.backgroundColor = FlatGray()
     }
 }

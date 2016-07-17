@@ -38,9 +38,6 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tapStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8H7-Vk-uUl"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-X0-EVL">
                                         <rect key="frame" x="170" y="0.0" width="150" height="60"/>
@@ -54,9 +51,6 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="tapStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rnk-Al-ydh"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
