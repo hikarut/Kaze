@@ -18,40 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lets start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRr-ff-GLB" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <rect key="frame" x="27" y="100" width="320" height="140"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lets start" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRr-ff-GLB" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
+                                <rect key="frame" x="27" y="100" width="320" height="281"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="100"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jq-7i-OPa">
-                                <rect key="frame" x="10" y="589" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZk-rG-OqD">
-                                <rect key="frame" x="10" y="610" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXb-wq-NB7">
-                                <rect key="frame" x="10" y="632" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgO-96-dZb">
-                                <rect key="frame" x="186" y="623" width="30" height="30"/>
-                                <connections>
-                                    <action selector="tap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4dT-Pf-Ybg"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-Ju-Xfz">
-                                <rect key="frame" x="35" y="297" width="320" height="60"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Apt-Ju-Xfz">
+                                <rect key="frame" x="27" y="553" width="320" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-Fz-l8d">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIA-Fz-l8d">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="BGR-B3-i3g"/>
@@ -66,7 +42,7 @@
                                             <action selector="tapStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8H7-Vk-uUl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-X0-EVL">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHa-X0-EVL">
                                         <rect key="frame" x="170" y="0.0" width="150" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="150" id="ceb-AQ-Rzw"/>
@@ -87,21 +63,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="xRr-ff-GLB" secondAttribute="trailing" constant="8" id="7fN-m2-gyj"/>
-                            <constraint firstItem="Apt-Ju-Xfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZNw-tW-qOk"/>
-                            <constraint firstItem="xRr-ff-GLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="flP-8x-IDy"/>
-                            <constraint firstItem="xRr-ff-GLB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="pRL-vf-6qy"/>
-                            <constraint firstItem="xRr-ff-GLB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="vM7-nh-Dgt"/>
-                            <constraint firstItem="Apt-Ju-Xfz" firstAttribute="top" secondItem="xRr-ff-GLB" secondAttribute="bottom" constant="57" id="yvC-Ed-fWV"/>
+                            <constraint firstItem="xRr-ff-GLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Vk-4y-HWb"/>
+                            <constraint firstItem="xRr-ff-GLB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="4dg-Fj-eUy"/>
+                            <constraint firstItem="Apt-Ju-Xfz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9BL-rX-aFR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Apt-Ju-Xfz" secondAttribute="bottom" constant="54" id="K26-1E-Wlj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xRr-ff-GLB" secondAttribute="trailing" constant="8" id="Mpe-ai-ioB"/>
+                            <constraint firstItem="xRr-ff-GLB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="xRh-U5-ayV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HOME" id="LEM-Ba-j7d"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="debugButton" destination="UgO-96-dZb" id="OUH-L2-ouW"/>
-                        <outlet property="debugLabelX" destination="2Jq-7i-OPa" id="sle-g0-3L9"/>
-                        <outlet property="debugLabelY" destination="EZk-rG-OqD" id="Gb3-Hl-n0K"/>
-                        <outlet property="debugLabelZ" destination="nXb-wq-NB7" id="Hs7-Mb-MWr"/>
                         <outlet property="label" destination="xRr-ff-GLB" id="jCq-cR-oFx"/>
                         <outlet property="startButton" destination="XIA-Fz-l8d" id="Hrd-0t-DBm"/>
                         <outlet property="stopButton" destination="dHa-X0-EVL" id="JBs-Nz-laP"/>

@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import CoreMotion
 
-class MagnetoViewModel {
+class MagnetoMeterViewModel {
+    
+    let cmManager = CMMotionManager()
     
     var xBefore: Double = 0
     var yBefore: Double = 0
@@ -18,7 +21,7 @@ class MagnetoViewModel {
     var yDiff: Double = 0
     var zDiff: Double = 0
     
-    func getMotionDiff(x: Double, y: Double, z: Double) -> Double {
+    func getMagnetoMeterDiff(x: Double, y: Double, z: Double) -> Double {
         var diffSum: Double = 0.0
         
         if xBefore == 0 && yBefore == 0 && zBefore == 0 {
@@ -53,7 +56,7 @@ class MagnetoViewModel {
         return diffSum
     }
     
-    func getMotionDiffForDebug(x: Double, y: Double, z: Double) -> [Double] {
+    func getMagnetoMeterDiffForDebug(x: Double, y: Double, z: Double) -> [Double] {
         var result: [Double] = []
         
         let x = round(x*100)/100
@@ -66,5 +69,4 @@ class MagnetoViewModel {
         
         return result
     }
-    
 }

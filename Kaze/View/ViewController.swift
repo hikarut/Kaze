@@ -17,17 +17,12 @@ class ViewController: UIViewController {
 
     let cmManager = CMMotionManager()
     
-    let coreMotionViewModel = MagnetoViewModel()
+    let magnetoMeterViewModel = MagnetoMeterViewModel()
     let websocketViewModel = WebSocketViewModel()
     
     @IBOutlet weak var label: LTMorphingLabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
-    
-    @IBOutlet weak var debugLabelX: UILabel!
-    @IBOutlet weak var debugLabelY: UILabel!
-    @IBOutlet weak var debugLabelZ: UILabel!
-    @IBOutlet weak var debugButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +47,7 @@ class ViewController: UIViewController {
         stopButton.enabled = false
     }
     
-    func startCoreMotion() {
+    func startMagnetoMeter() {
         cmManager.magnetometerUpdateInterval = Const.interval
         
         // キューで実行するクロージャ
@@ -63,7 +58,7 @@ class ViewController: UIViewController {
         cmManager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
     }
     
-    func stopCoreMotion() {
+    func stopMagnetoMeter() {
         cmManager.stopMagnetometerUpdates()
     }
     
@@ -75,16 +70,10 @@ class ViewController: UIViewController {
             let z = data.magneticField.z
             
             // 差分を取得
-            let data = coreMotionViewModel.getMotionDiff(x, y: y, z: z)
+            let data = magnetoMeterViewModel.getMagnetoMeterDiff(x, y: y, z: z)
             
             // 磁力の変化を表示
             label.text = String(data)
-            
-            // デバッグ用
-            let debugData = coreMotionViewModel.getMotionDiffForDebug(x, y: y, z: z)
-            debugLabelX.text = "x:" + String(debugData[0])
-            debugLabelY.text = "y:" + String(debugData[1])
-            debugLabelZ.text = "z:" + String(debugData[2])
             
             // 差分をwebsocketで送信
             websocketViewModel.send(String(data))
@@ -96,15 +85,8 @@ class ViewController: UIViewController {
         return .All
     }
     
-    // デバッグ用
-    @IBAction func tap(sender: UIButton) {
-        websocketViewModel.send("test")
-        
-        stopCoreMotion()
-    }
-    
     @IBAction func tapStart(sender: UIButton) {
-        startCoreMotion()
+        startMagnetoMeter()
         websocketViewModel.connect()
         
         startButton.enabled = false
@@ -114,7 +96,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapStop(sender: UIButton) {
-        stopCoreMotion()
+        stopMagnetoMeter()
         websocketViewModel.disconnect()
         
         startButton.enabled = true
