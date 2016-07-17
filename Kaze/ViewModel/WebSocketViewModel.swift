@@ -11,8 +11,8 @@ import Starscream
 
 class WebSocketViewModel {
     
-    var socket = WebSocket(url: NSURL(string: Const.websocketServerDebug)!)
-//    var socket = WebSocket(url: NSURL(string: Const.websocketServer)!)
+//    var socket = WebSocket(url: NSURL(string: Const.websocketServerDebug)!)
+    var socket = WebSocket(url: NSURL(string: Const.websocketServer)!)
     
     func connect() {
         socket.delegate = self

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CoreMotionViewModel {
+class MagnetoViewModel {
     
     var xBefore: Double = 0
     var yBefore: Double = 0
@@ -27,13 +27,19 @@ class CoreMotionViewModel {
             zDiff = 0
         } else {
             // 差分を10分の1にする
-            xDiff = round((x - xBefore)*10)/100
-            yDiff = round((y - yBefore)*10)/100
-            zDiff = round((z - zBefore)*10)/100
+            xDiff = round((x - xBefore)*10)/90
+            yDiff = round((y - yBefore)*10)/90
+            zDiff = round((z - zBefore)*10)/90
+            // 2乗で差分をとって2000分の1にする
+//            xDiff = round((pow(x, 2) - pow(xBefore, 2))*10)/20000
+//            yDiff = round((pow(y, 2) - pow(yBefore, 2))*10)/20000
+//            zDiff = round((pow(z, 2) - pow(zBefore, 2))*10)/20000
         }
         
         // 差分の絶対値を合計する
         diffSum = fabs(xDiff) + fabs(yDiff) + fabs(zDiff)
+        // 差分を合計する
+//        diffSum = xDiff + yDiff + zDiff
         
         // 1以下は0にする
         diffSum = diffSum < 1 ? 0.0 : diffSum

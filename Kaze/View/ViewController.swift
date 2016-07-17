@@ -17,7 +17,7 @@ class ViewController: UIViewController {
 
     let cmManager = CMMotionManager()
     
-    let coreMotionViewModel = CoreMotionViewModel()
+    let coreMotionViewModel = MagnetoViewModel()
     let websocketViewModel = WebSocketViewModel()
     
     @IBOutlet weak var label: LTMorphingLabel!
@@ -32,17 +32,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 結果を表示するラベル
         label.morphingEffect = .Anvil
-        startButton.backgroundColor = FlatRed()
-        stopButton.backgroundColor = FlatRed()
-        startButton.tintColor = FlatWhite()
-        stopButton.tintColor = FlatWhite()
-        stopButton.enabled = false
         
+        // ボタンの設定
+        setButtonInit()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func setButtonInit() {
+        startButton.backgroundColor = FlatRed()
+        startButton.tintColor = FlatWhite()
+        
+        stopButton.backgroundColor = FlatGray()
+        stopButton.tintColor = FlatWhite()
+        stopButton.enabled = false
     }
     
     func startCoreMotion() {
@@ -99,14 +106,20 @@ class ViewController: UIViewController {
     @IBAction func tapStart(sender: UIButton) {
         startCoreMotion()
         websocketViewModel.connect()
+        
         startButton.enabled = false
+        startButton.backgroundColor = FlatGray()
         stopButton.enabled = true
+        stopButton.backgroundColor = FlatRed()
     }
     
     @IBAction func tapStop(sender: UIButton) {
         stopCoreMotion()
         websocketViewModel.disconnect()
+        
         startButton.enabled = true
+        startButton.backgroundColor = FlatRed()
         stopButton.enabled = false
+        stopButton.backgroundColor = FlatGray()
     }
 }

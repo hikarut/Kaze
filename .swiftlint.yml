@@ -13,4 +13,4 @@ disabled_rules:
 # Lint対象から外すファイル
 excluded:
   - Carthage
-
+  - Pods

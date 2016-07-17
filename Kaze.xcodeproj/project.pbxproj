@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		171B12A21D2BE9BB00D5BF26 /* CoreMotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B12A11D2BE9BB00D5BF26 /* CoreMotionViewModel.swift */; };
+		171B12A21D2BE9BB00D5BF26 /* MagnetoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B12A11D2BE9BB00D5BF26 /* MagnetoViewModel.swift */; };
 		171B12A41D2BE9D900D5BF26 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B12A31D2BE9D900D5BF26 /* Model.swift */; };
 		171B12A61D2BEC4800D5BF26 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171B12A51D2BEC4800D5BF26 /* Const.swift */; };
 		1735295E1D27B366000587DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1735295D1D27B366000587DD /* AppDelegate.swift */; };
@@ -26,6 +26,9 @@
 		1790BFD41D3A018D00DD64BC /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD11D3A018D00DD64BC /* Starscream.framework */; };
 		1790BFD51D3A018D00DD64BC /* LTMorphingLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD21D3A018D00DD64BC /* LTMorphingLabel.framework */; };
 		1790BFD61D3A018D00DD64BC /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1790BFD31D3A018D00DD64BC /* Chameleon.framework */; };
+		31B3053D46E9001502180D07 /* Pods_KazeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13E64C5FAD07E98A5BAA2D18 /* Pods_KazeTests.framework */; };
+		5EEB8E156281C92F6A44E947 /* Pods_KazeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93254F62BF63C24AB3EE977 /* Pods_KazeUITests.framework */; };
+		953598AC430FEEA854CEF2FB /* Pods_Kaze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466F90B8480C6C7189753D1F /* Pods_Kaze.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		171B12A11D2BE9BB00D5BF26 /* CoreMotionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreMotionViewModel.swift; sourceTree = "<group>"; };
+		13E64C5FAD07E98A5BAA2D18 /* Pods_KazeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		171B12A11D2BE9BB00D5BF26 /* MagnetoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnetoViewModel.swift; sourceTree = "<group>"; };
 		171B12A31D2BE9D900D5BF26 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		171B12A51D2BEC4800D5BF26 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		1735295A1D27B366000587DD /* kaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,14 @@
 		1790BFD11D3A018D00DD64BC /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Starscream.framework; path = Carthage/Build/iOS/Starscream.framework; sourceTree = "<group>"; };
 		1790BFD21D3A018D00DD64BC /* LTMorphingLabel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LTMorphingLabel.framework; path = Carthage/Build/iOS/LTMorphingLabel.framework; sourceTree = "<group>"; };
 		1790BFD31D3A018D00DD64BC /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
+		2C485C20F03F39E1C3DDF6AB /* Pods-KazeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazeUITests/Pods-KazeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		466F90B8480C6C7189753D1F /* Pods_Kaze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kaze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		651343817FA2551D67A1CB60 /* Pods-KazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KazeTests/Pods-KazeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6AFA1B880D7F172646543CA4 /* Pods-KazeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KazeUITests/Pods-KazeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		88CF36AA1B9D5A22DF1FA031 /* Pods-Kaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kaze/Pods-Kaze.debug.xcconfig"; sourceTree = "<group>"; };
+		A93254F62BF63C24AB3EE977 /* Pods_KazeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KazeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB25D132A15AFBDA1C77371C /* Pods-Kaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kaze.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kaze/Pods-Kaze.release.xcconfig"; sourceTree = "<group>"; };
+		D393A819CF05682659986EEC /* Pods-KazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KazeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KazeTests/Pods-KazeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +98,7 @@
 				173529901D27CBBA000587DD /* RxSwift.framework in Frameworks */,
 				173529911D27CBBA000587DD /* RxCocoa.framework in Frameworks */,
 				173529931D27CBBA000587DD /* RxBlocking.framework in Frameworks */,
+				953598AC430FEEA854CEF2FB /* Pods_Kaze.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31B3053D46E9001502180D07 /* Pods_KazeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EEB8E156281C92F6A44E947 /* Pods_KazeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				1790BFCB1D39C66200DD64BC /* SocketIoViewModel.swift */,
-				171B12A11D2BE9BB00D5BF26 /* CoreMotionViewModel.swift */,
+				171B12A11D2BE9BB00D5BF26 /* MagnetoViewModel.swift */,
 				1790BFCF1D39FBEE00DD64BC /* WebSocketViewModel.swift */,
 			);
 			path = ViewModel;
@@ -147,6 +162,8 @@
 				1735298D1D27CBBA000587DD /* RxCocoa.framework */,
 				1735298C1D27CBBA000587DD /* RxSwift.framework */,
 				1735298E1D27CBBA000587DD /* RxTests.framework */,
+				2704AAFAA731C6FA335DC823 /* Pods */,
+				21EC4B3836F8766B5ABB2315 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +211,29 @@
 			path = KazeUITests;
 			sourceTree = "<group>";
 		};
+		21EC4B3836F8766B5ABB2315 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				466F90B8480C6C7189753D1F /* Pods_Kaze.framework */,
+				13E64C5FAD07E98A5BAA2D18 /* Pods_KazeTests.framework */,
+				A93254F62BF63C24AB3EE977 /* Pods_KazeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2704AAFAA731C6FA335DC823 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				88CF36AA1B9D5A22DF1FA031 /* Pods-Kaze.debug.xcconfig */,
+				BB25D132A15AFBDA1C77371C /* Pods-Kaze.release.xcconfig */,
+				651343817FA2551D67A1CB60 /* Pods-KazeTests.debug.xcconfig */,
+				D393A819CF05682659986EEC /* Pods-KazeTests.release.xcconfig */,
+				6AFA1B880D7F172646543CA4 /* Pods-KazeUITests.debug.xcconfig */,
+				2C485C20F03F39E1C3DDF6AB /* Pods-KazeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -201,11 +241,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 173529821D27B366000587DD /* Build configuration list for PBXNativeTarget "Kaze" */;
 			buildPhases = (
+				310BFE1037B2DD20B22237DA /* [CP] Check Pods Manifest.lock */,
 				173529561D27B366000587DD /* Sources */,
 				173529571D27B366000587DD /* Frameworks */,
 				173529581D27B366000587DD /* Resources */,
 				1735298B1D27B4EA000587DD /* ShellScript */,
 				173529941D27CBEB000587DD /* ShellScript */,
+				2E3CF796E3CCD645DC666480 /* [CP] Embed Pods Frameworks */,
+				29121CB106D28A2AA644E172 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 173529851D27B366000587DD /* Build configuration list for PBXNativeTarget "KazeTests" */;
 			buildPhases = (
+				3D6B04058EA544D74FC71112 /* [CP] Check Pods Manifest.lock */,
 				1735296A1D27B366000587DD /* Sources */,
 				1735296B1D27B366000587DD /* Frameworks */,
 				1735296C1D27B366000587DD /* Resources */,
+				EFC9FDF1E9D49137F8BCC80F /* [CP] Embed Pods Frameworks */,
+				10EFC8A5A81CF5935AF972D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 173529881D27B366000587DD /* Build configuration list for PBXNativeTarget "KazeUITests" */;
 			buildPhases = (
+				0EE65FB0028719AD9D761498 /* [CP] Check Pods Manifest.lock */,
 				173529751D27B366000587DD /* Sources */,
 				173529761D27B366000587DD /* Frameworks */,
 				173529771D27B366000587DD /* Resources */,
+				42FE448EFE516B936B267213 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +306,9 @@
 		173529521D27B366000587DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					presentMenu,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = HikaruTakahashi;
@@ -326,6 +377,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0EE65FB0028719AD9D761498 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		10EFC8A5A81CF5935AF972D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KazeTests/Pods-KazeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1735298B1D27B4EA000587DD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,6 +440,96 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
+		29121CB106D28A2AA644E172 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaze/Pods-Kaze-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E3CF796E3CCD645DC666480 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kaze/Pods-Kaze-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		310BFE1037B2DD20B22237DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3D6B04058EA544D74FC71112 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		42FE448EFE516B936B267213 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KazeUITests/Pods-KazeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFC9FDF1E9D49137F8BCC80F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KazeTests/Pods-KazeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -368,7 +539,7 @@
 			files = (
 				173529601D27B366000587DD /* ViewController.swift in Sources */,
 				1790BFCC1D39C66200DD64BC /* SocketIoViewModel.swift in Sources */,
-				171B12A21D2BE9BB00D5BF26 /* CoreMotionViewModel.swift in Sources */,
+				171B12A21D2BE9BB00D5BF26 /* MagnetoViewModel.swift in Sources */,
 				1735295E1D27B366000587DD /* AppDelegate.swift in Sources */,
 				1790BFD01D39FBEE00DD64BC /* WebSocketViewModel.swift in Sources */,
 				171B12A41D2BE9D900D5BF26 /* Model.swift in Sources */,
@@ -516,6 +687,7 @@
 		};
 		173529831D27B366000587DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88CF36AA1B9D5A22DF1FA031 /* Pods-Kaze.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -532,6 +704,7 @@
 		};
 		173529841D27B366000587DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB25D132A15AFBDA1C77371C /* Pods-Kaze.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -548,6 +721,7 @@
 		};
 		173529861D27B366000587DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 651343817FA2551D67A1CB60 /* Pods-KazeTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KazeTests/Info.plist;
@@ -560,6 +734,7 @@
 		};
 		173529871D27B366000587DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D393A819CF05682659986EEC /* Pods-KazeTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KazeTests/Info.plist;
@@ -572,6 +747,7 @@
 		};
 		173529891D27B366000587DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AFA1B880D7F172646543CA4 /* Pods-KazeUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KazeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -583,6 +759,7 @@
 		};
 		1735298A1D27B366000587DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C485C20F03F39E1C3DDF6AB /* Pods-KazeUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KazeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
