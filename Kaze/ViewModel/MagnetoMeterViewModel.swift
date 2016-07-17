@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreMotion
+import RxSwift
 
 class MagnetoMeterViewModel {
     
@@ -21,7 +22,43 @@ class MagnetoMeterViewModel {
     var yDiff: Double = 0
     var zDiff: Double = 0
     
+    // イベント発生
+    private let eventSubject = PublishSubject<Double>()
+    var event: Observable<Double> { return eventSubject }
+    
+    init() {
+        cmManager.magnetometerUpdateInterval = Const.interval
+    }
+    
+    func startMagnetoMeter() {
+        // キューで実行するクロージャ
+        let handler: CMMagnetometerHandler = {(magnetoData: CMMagnetometerData?, error: NSError?) -> Void in
+            self.showMagnetoData(magnetoData, error: error)
+        }
+        // キューを登録し、スタート
+        cmManager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
+    }
+    
+    func stopMagnetoMeter() {
+        cmManager.stopMagnetometerUpdates()
+    }
+    
+    func showMagnetoData(magnetoData: CMMagnetometerData?, error: NSError?) {
+        if let data = magnetoData {
+            
+            let x = data.magneticField.x
+            let y = data.magneticField.y
+            let z = data.magneticField.z
+            
+            // 差分を取得
+            let data = getMagnetoMeterDiff(x, y: y, z: z)
+            // 通知
+            eventSubject.onNext(data)
+        }
+    }
+    
     func getMagnetoMeterDiff(x: Double, y: Double, z: Double) -> Double {
+        
         var diffSum: Double = 0.0
         
         if xBefore == 0 && yBefore == 0 && zBefore == 0 {
@@ -33,16 +70,10 @@ class MagnetoMeterViewModel {
             xDiff = round((x - xBefore)*10)/90
             yDiff = round((y - yBefore)*10)/90
             zDiff = round((z - zBefore)*10)/90
-            // 2乗で差分をとって2000分の1にする
-//            xDiff = round((pow(x, 2) - pow(xBefore, 2))*10)/20000
-//            yDiff = round((pow(y, 2) - pow(yBefore, 2))*10)/20000
-//            zDiff = round((pow(z, 2) - pow(zBefore, 2))*10)/20000
         }
         
         // 差分の絶対値を合計する
         diffSum = fabs(xDiff) + fabs(yDiff) + fabs(zDiff)
-        // 差分を合計する
-//        diffSum = xDiff + yDiff + zDiff
         
         // 1以下は0にする
         diffSum = diffSum < 1 ? 0.0 : diffSum
@@ -54,19 +85,5 @@ class MagnetoMeterViewModel {
         zBefore = z
         
         return diffSum
-    }
-    
-    func getMagnetoMeterDiffForDebug(x: Double, y: Double, z: Double) -> [Double] {
-        var result: [Double] = []
-        
-        let x = round(x*100)/100
-        let y = round(y*100)/100
-        let z = round(z*100)/100
-                
-        result.append(x)
-        result.append(y)
-        result.append(z)
-        
-        return result
     }
 }

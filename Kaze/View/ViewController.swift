@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreMotion
 import LTMorphingLabel
 import Chameleon
 import RxSwift
@@ -16,7 +15,6 @@ import RxCocoa
 class ViewController: UIViewController {
 
     let disposeBag = DisposeBag()
-    let cmManager = CMMotionManager()
     
     let magnetoMeterViewModel = MagnetoMeterViewModel()
     let websocketViewModel = WebSocketViewModel()
@@ -31,34 +29,50 @@ class ViewController: UIViewController {
         // 結果を表示するラベル
         label.morphingEffect = .Anvil
         
-        // ボタンの設定
+        // ボタンの初期設定
         setButtonInit()
         
         // スタートボタン
         startButton.rx_tap
             .subscribeNext { [unowned self] _ in
-                self.startMagnetoMeter()
+                // 磁力センサーの開始
+                self.magnetoMeterViewModel.startMagnetoMeter()
+                // websocketの開始
                 self.websocketViewModel.connect()
-                
-                self.startButton.enabled = false
-                self.startButton.backgroundColor = FlatGray()
-                self.stopButton.enabled = true
-                self.stopButton.backgroundColor = FlatRed()
+                // スタートボタンの無効化
+                self.disableStartButton()
             }
             .addDisposableTo(disposeBag)
         
         // ストップボタン
         stopButton.rx_tap
             .subscribeNext { [unowned self] _ in
-                self.stopMagnetoMeter()
+                // 磁力センサーの終了
+                self.magnetoMeterViewModel.stopMagnetoMeter()
+                // websocketの終了
                 self.websocketViewModel.disconnect()
-                
-                self.startButton.enabled = true
-                self.startButton.backgroundColor = FlatRed()
-                self.stopButton.enabled = false
-                self.stopButton.backgroundColor = FlatGray()
+                // ストップボタンの無効化
+                self.disableStopButton()
             }
             .addDisposableTo(disposeBag)
+        
+        // イベントの取得
+        _ = magnetoMeterViewModel.event.subscribe(
+            onNext: { value in
+                // 通常イベント発生時の処理
+                
+                // ラベルに表示
+                self.label.text = String(value)
+                
+                // websocketでデータを送信
+                self.websocketViewModel.send(String(value))
+            },
+            onError: { error in
+                // エラー発生時の処理
+            },
+            onCompleted: {
+                // 完了時の処理
+            })
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,37 +88,24 @@ class ViewController: UIViewController {
         stopButton.enabled = false
     }
     
-    func startMagnetoMeter() {
-        cmManager.magnetometerUpdateInterval = Const.interval
+    func disableStartButton() {
+        // スタートボタンを無効にする
+        startButton.enabled = false
+        startButton.backgroundColor = FlatGray()
         
-        // キューで実行するクロージャ
-        let handler: CMMagnetometerHandler = {(magnetoData: CMMagnetometerData?, error: NSError?) -> Void in
-            self.showMagnetoData(magnetoData, error: error)
-        }
-        // キューを登録し、スタート
-        cmManager.startMagnetometerUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: handler)
+        // ストップボタンを有効にする
+        stopButton.enabled = true
+        stopButton.backgroundColor = FlatRed()
     }
     
-    func stopMagnetoMeter() {
-        cmManager.stopMagnetometerUpdates()
-    }
-    
-    func showMagnetoData(magnetoData: CMMagnetometerData?, error: NSError?) {
-        if let data = magnetoData {
-            
-            let x = data.magneticField.x
-            let y = data.magneticField.y
-            let z = data.magneticField.z
-            
-            // 差分を取得
-            let data = magnetoMeterViewModel.getMagnetoMeterDiff(x, y: y, z: z)
-            
-            // 磁力の変化を表示
-            label.text = String(data)
-            
-            // 差分をwebsocketで送信
-            websocketViewModel.send(String(data))
-        }
+    func disableStopButton() {
+        // スタートボタンを無効にする
+        startButton.enabled = true
+        startButton.backgroundColor = FlatRed()
+        
+        // ストップボタンを有効にする
+        stopButton.enabled = false
+        stopButton.backgroundColor = FlatGray()
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
